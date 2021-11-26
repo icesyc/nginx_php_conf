@@ -12,7 +12,7 @@ RUN yum install -y wget nginx && yum clean all
 RUN wget https://raw.githubusercontent.com/icesyc/nginx_php_conf/main/nginx.conf && mv nginx.conf /etc/nginx/nginx.conf
 
 #安装php
-RUN yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm && yum-config-manager --enable remi-php74 && yum install php php-fpm php-mysql php-mbstring php-redis
+RUN yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm && yum-config-manager --enable remi-php74 && yum -y install php php-fpm php-mysql php-mbstring php-redis
 
 #修改目录权限
 RUN chmod o+x /usr/local/app
