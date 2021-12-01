@@ -20,5 +20,3 @@ RUN chmod o+x /usr/local/app
 #WORKDIR 相当于cd
 WORKDIR /usr/local/app
 
-EXPOSE 8080
-CMD ["nginx"]
