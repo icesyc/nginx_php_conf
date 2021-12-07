@@ -14,6 +14,9 @@ RUN wget https://raw.githubusercontent.com/icesyc/nginx_php_conf/main/nginx.conf
 #安装php
 RUN yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm && yum-config-manager --enable remi-php74 && yum -y install php php-fpm php-mysql php-mbstring php-redis
 
+#创建php-fpm的pid目录
+RUN mkdir -p /run/php-fpm && chown mqq:mqq /run/php-fpm
+
 #WORKDIR 相当于cd
 WORKDIR /usr/local/app
 
